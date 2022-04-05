@@ -1,4 +1,4 @@
-import { LoginRouter } from './routers/LoginRouter';
+import { LoginRouter } from './routers';
 
 const App = () => {
     return <LoginRouter />;

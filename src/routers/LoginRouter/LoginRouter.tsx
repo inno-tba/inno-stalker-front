@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { atom, useRecoilValue } from 'recoil';
+import { LoginPage } from '../../pages/LoginPage';
 import { HomeRouter } from '../HomeRouter';
 
 export const isLoginState = atom({
@@ -19,7 +20,7 @@ const LoginRouter = () => {
                 </>
             ) : (
                 <>
-                    <Route path='/login' element={<div>Login</div>} />
+                    <Route path='/login' element={<LoginPage />} />
                     <Route path='*' element={<Navigate to='/login' />} />
                 </>
             )}
