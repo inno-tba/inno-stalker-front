@@ -1,5 +1,7 @@
+import { LoginRouter } from './routers/LoginRouter';
+
 const App = () => {
-    return <div className='app'></div>;
+    return <LoginRouter />;
 };
 
 export default App;
