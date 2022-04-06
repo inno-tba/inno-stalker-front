@@ -15,13 +15,12 @@ const LoginRouter = () => {
         <Routes>
             {isLogin ? (
                 <>
-                    <Route path='*' element={<Navigate to='/' />} />
-                    <Route path='/' element={<HomeRouter />} />
+                    <Route path='*' element={<HomeRouter />} />
                 </>
             ) : (
                 <>
-                    <Route path='/login' element={<LoginPage />} />
                     <Route path='*' element={<Navigate to='/login' />} />
+                    <Route path='/login' element={<LoginPage />} />
                 </>
             )}
         </Routes>
