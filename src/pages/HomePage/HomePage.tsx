@@ -1,8 +1,8 @@
-import { GameMap, TargetsList } from '../../components';
+import { GameMap } from '../../components';
 
 const HomePage = () => {
     return (
-        <div className='flex'>
+        <div className='flex h-92vh'>
             <GameMap />
         </div>
     );
