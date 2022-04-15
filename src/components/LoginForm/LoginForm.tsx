@@ -9,7 +9,7 @@ const user = {
     name: 'Daniil Gubaidullin',
     email: 'gubaydullin.dan@gmail.com',
     picture:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://sun9-79.userapi.com/impf/c856136/v856136827/590c6/tJFWJzVdir0.jpg?size=810x1080&quality=96&sign=c7a15cf14a713399cf8868ff7083ca35&type=album',
 };
 
 const LoginForm = () => {

@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { NavBar } from '../../components';
-import { HomePage } from '../../pages';
+import { HomePage, TasksPage } from '../../pages';
 
 const HomeRouter = () => {
     return (
@@ -11,6 +11,7 @@ const HomeRouter = () => {
             <Routes>
                 <Route path='*' element={<Navigate to='/home' />} />
                 <Route path='/home' element={<HomePage />} />
+                <Route path='/tasks' element={<TasksPage />} />
             </Routes>
         </>
     );

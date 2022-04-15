@@ -9,7 +9,10 @@ import {
 } from '../../routers/LoginRouter/LoginRouter';
 import { signOut } from '../../functions/signOut';
 
-const navigation = [{ name: 'Home', href: '/home' }];
+const navigation = [
+    { name: 'Home', href: '/home' },
+    { name: 'Tasks', href: '/tasks' },
+];
 
 const NavBar = () => {
     const user = useRecoilValue(userDetails);
