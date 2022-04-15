@@ -2,10 +2,19 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+    isLoginState,
+    userDetails,
+} from '../../routers/LoginRouter/LoginRouter';
+import { signOut } from '../../functions/signOut';
 
 const navigation = [{ name: 'Home', href: '/home' }];
 
 const NavBar = () => {
+    const user = useRecoilValue(userDetails);
+    const setIsLogin = useSetRecoilState<boolean>(isLoginState);
+
     return (
         <Disclosure as='nav' className='bg-gray-800'>
             {({ open }) => (
@@ -85,7 +94,7 @@ const NavBar = () => {
                                             </span>
                                             <img
                                                 className='h-8 w-8 rounded-full'
-                                                src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                                                src={user.picture}
                                                 alt=''
                                             />
                                         </Menu.Button>
@@ -105,7 +114,12 @@ const NavBar = () => {
                                                     Your Profile
                                                 </p>
                                             </Menu.Item>
-                                            <Menu.Item>
+                                            <Menu.Item
+                                                as='button'
+                                                onClick={() =>
+                                                    signOut(setIsLogin)
+                                                }
+                                            >
                                                 <p className='block px-4 py-2 text-sm text-gray-700'>
                                                     Sign out
                                                 </p>

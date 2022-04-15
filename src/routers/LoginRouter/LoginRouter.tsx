@@ -8,6 +8,15 @@ export const isLoginState = atom({
     default: false,
 });
 
+export const userDetails = atom({
+    key: 'userDetails',
+    default: {
+        name: '',
+        email: '',
+        picture: '',
+    },
+});
+
 const LoginRouter = () => {
     const isLogin = useRecoilValue<boolean>(isLoginState);
 
