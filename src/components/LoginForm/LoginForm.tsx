@@ -47,6 +47,10 @@ const LoginForm = () => {
         }
     };
 
+    const isInputsValid = () => {
+        return userEmail.length > 0 && userPassword.length > 0;
+    };
+
     return (
         <section className='h-screen'>
             <div className='container px-6 py-12 h-full'>
@@ -86,10 +90,11 @@ const LoginForm = () => {
 
                             <button
                                 type='button'
-                                className='inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full'
+                                className='inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full disabled:px-8 disabled:py-3 disabled:text-white disabled:bg-blue-300 disabled:rounded disabled:focus:outline-none disabled:shadow-none'
                                 data-mdb-ripple='true'
                                 data-mdb-ripple-color='light'
                                 onClick={signIn}
+                                disabled={!isInputsValid()}
                             >
                                 Sign in
                             </button>
