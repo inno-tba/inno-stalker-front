@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type ITargetsList = {
     id: number;
@@ -8,7 +8,7 @@ type ITargetsList = {
 };
 
 const TargetsList = () => {
-    const [targetsList, _] = useState<ITargetsList[]>([
+    const [targetsList, setTargetsList] = useState<ITargetsList[]>([
         {
             id: 0,
             targetName: 'Daniil Gubaidullin',
@@ -28,6 +28,16 @@ const TargetsList = () => {
             pointsForTask: 100,
         },
     ]);
+
+    useEffect(() => {
+        const updateTargetsList = () => {
+            const updatedTargetsList: ITargetsList[] = [...targetsList];
+
+            setTargetsList(updatedTargetsList);
+        };
+
+        updateTargetsList();
+    }, [targetsList]);
 
     return (
         <div className='flex flex-col'>
